@@ -1,3 +1,5 @@
+
+
 let ataqueJugador
 let ataqueEnemigo
 let vidasJugador = 3
@@ -11,7 +13,7 @@ function iniciarJuego(){
     let sectionReiniciar = document.getElementById("reiniciar")
     sectionReiniciar.style.display = "none"
 
-        let botonMascotaJugador = document.getElementById("boton-mascota")
+    let botonMascotaJugador = document.getElementById("boton-mascota")
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador)
 
     let botonFuego = document.getElementById("boton-fuego")
@@ -29,10 +31,10 @@ function iniciarJuego(){
 function seleccionarMascotaJugador(){
     let sectionSeleccionarMascota=document.getElementById("seleccionar-mascota")
     sectionSeleccionarMascota.style.display="none"
-
-
- let sectionSeleccionarAtaque=document.getElementById("seleccionar-ataque")
+    let sectionSeleccionarAtaque=document.getElementById("seleccionar-ataque")
     sectionSeleccionarAtaque.style.display="flex"
+
+ 
 
     let inputHipodogue = document.getElementById("hipodogue")
     let inputCapipepo = document.getElementById("capipepo")  
@@ -56,13 +58,18 @@ function seleccionarMascotaJugador(){
         }else if(inputPydos.checked){
             spanMascotaJugador.innerHTML = "Pydos"
         }else {
-            alert("Aun no has elegido, selecciona por favor. ")
-
+            
+             reiniciarJuego(alert("Aun no has elegido, selecciona por favor. "))
         }
         
+        
         seleccionarMascotaEnemigo()
-     
+
     }
+
+    
+  
+     
     function seleccionarMascotaEnemigo() {
             let mascotaAleatoria = aleatorio(1,6)
             let spanMascotaEnemigo = document.getElementById("mascota-enemigo")  
