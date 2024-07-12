@@ -74,15 +74,18 @@ button {
 
 .tarjeta-de-mokepon{
 
-    width: 130px;
-    height: 200px;
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    height: 250px;
     background: rgb(28, 218, 69);
     padding: 15px;
     box-sizing: border-box;
     margin: 10px;
     border: 2px solid rgb(60, 63, 238);
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 30px;
+    
     
 
 }
