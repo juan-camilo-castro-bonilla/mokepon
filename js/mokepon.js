@@ -6,6 +6,7 @@ const botonAgua = document.getElementById("boton-agua")
 const botonTierra =document.getElementById("boton-tierra")
 const botonReiniciar =document.getElementById("boton-reiniciar")
 
+const sectionSeleccionarMascota=document.getElementById("seleccionar-mascota")
 
 
 const spanMascotaJugador = document.getElementById("mascota-jugador")
@@ -20,7 +21,6 @@ const ataquesDelJugador = document.getElementById("ataques-del-jugador")
 const ataquesDelEnemigo = document.getElementById("ataques-del-enemigo")
 const contenedorTarjetas = document.getElementById("contenedorTarjetas")
 
-let sectionSeleccionarMascota=document.getElementById("seleccionar-mascota")
 
 let mokepones = []
 let ataqueJugador
@@ -83,7 +83,6 @@ langostelvis.ataques.push(
     {nombre: "🔥", id: "boton-fuego"},
     {nombre: "🔥", id: "boton-fuego"},
     {nombre: "🔥", id: "boton-fuego"},
-    {nombre: "🔥", id: "boton-fuego"},
     {nombre: "💧", id: "boton-agua"},
     {nombre: "🌱", id: "boton-tierra"},
 )
@@ -91,12 +90,10 @@ tucapalma.ataques.push(
     {nombre: "🌱", id: "boton-tierra"},
     {nombre: "🌱", id: "boton-tierra"},
     {nombre: "🌱", id: "boton-tierra"},
-    {nombre: "🌱", id: "boton-tierra"},
     {nombre: "💧", id: "boton-agua"},
     {nombre: "🔥", id: "boton-fuego"},
 )
 pydos.ataques.push(
-    {nombre: "💧", id: "boton-agua"},
     {nombre: "💧", id: "boton-agua"},
     {nombre: "💧", id: "boton-agua"},
     {nombre: "💧", id: "boton-agua"},
@@ -113,13 +110,14 @@ function iniciarJuego(){
 
     mokepones.forEach((mokepon) => {
         opcionDeMokepones = `
-        <input type="radio" name="mascota" id=${mokepon.nombre}/>
+        <input type="radio" name="mascota" id=${mokepon.nombre} />
         <label class="tarjeta-de-mokepon" for =${mokepon.nombre}>
         <p>${mokepon.nombre}</p> 
         <img width="100px" src=${mokepon.foto} alt=${mokepon.nombre}/>
         </label> 
         `
         contenedorTarjetas.innerHTML+= opcionDeMokepones
+        
         inputHipodogue = document.getElementById("Hipodogue")
         inputCapipepo = document.getElementById("Capipepo")  
         inputRatigueya = document.getElementById("Ratigueya")
@@ -142,23 +140,23 @@ function seleccionarMascotaJugador(){
   
 
         if(inputHipodogue.checked){
-            spanMascotaJugador.innerHTML = "Hipodogue"
+            spanMascotaJugador.innerHTML = inputHipodogue.id
             seleccionarMascotaEnemigo()
 
         }else if(inputCapipepo.checked){
-            spanMascotaJugador.innerHTML = "Capipepo"
+            spanMascotaJugador.innerHTML = inputCapipepo.id
             seleccionarMascotaEnemigo()
         }else if(inputRatigueya.checked){
-            spanMascotaJugador.innerHTML = "Ratigueya"
+            spanMascotaJugador.innerHTML = inputRatigueya.id
             seleccionarMascotaEnemigo()
         }else if(inputLangostelvis.checked){
-            spanMascotaJugador.innerHTML = "Langostelvis"
+            spanMascotaJugador.innerHTML = inputLangostelvis.id
             seleccionarMascotaEnemigo()
         }else if(inputTucapalma.checked){
-            spanMascotaJugador.innerHTML = "Tucapalma"
+            spanMascotaJugador.innerHTML = inputTucapalma.id
             seleccionarMascotaEnemigo()
         }else if(inputPydos.checked){
-            spanMascotaJugador.innerHTML = "Pydos"
+            spanMascotaJugador.innerHTML = inputPydos.id
             seleccionarMascotaEnemigo()
         }else {
             alert("Aun no has elegido, selecciona por favor. ")
@@ -173,22 +171,10 @@ function seleccionarMascotaJugador(){
 function seleccionarMascotaEnemigo() {
         sectionSeleccionarAtaque.style.display="flex"
         sectionSeleccionarMascota.style.display="none"
-        let mascotaAleatoria = aleatorio(1,6)
+        let mascotaAleatoria = aleatorio(0, mokepones.length -1)
             
-
-        if (mascotaAleatoria == 1){
-            spanMascotaEnemigo.innerHTML = "Hipodogue"
-        }else if (mascotaAleatoria ==2){
-            spanMascotaEnemigo.innerHTML = "Capipepo"
-        }else if (mascotaAleatoria ==3){
-            spanMascotaEnemigo.innerHTML = "Ratigueya"
-        }else if (mascotaAleatoria ==4){
-            spanMascotaEnemigo.innerHTML = "Langostelvis"
-        }else if(mascotaAleatoria ==5){
-            spanMascotaEnemigo.innerHTML = "Tucapalma"
-        }else {
-            spanMascotaEnemigo.innerHTML = "Pydos"
-        }
+        spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre
+        
     }
 
         function ataqueFuego(){
