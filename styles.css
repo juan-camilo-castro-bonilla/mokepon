@@ -23,12 +23,12 @@ body{
         font-style: normal;
         font-size: 30px;
     
-    color: black;
+    /* color: black;
     width: 470px;
     height: 50px;
     background-color: rgb(107, 216, 44);
     border: 2px solid rgb(60, 63, 238);
-    border-radius: 20px;
+    border-radius: 20px; */
 }
 .subtitulo{
 
@@ -155,6 +155,19 @@ input:checked + label {
     align-items: center;
 }
 
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+
+#mapa {
+    
+    border: 2px solid black;
+}
+
 
 @media (max-width: 360px){
     .tarjetas, .tarjetas-ataques{
@@ -162,7 +175,28 @@ input:checked + label {
     }
  }    
 
+ @media (min-width: 361px) and (max-width: 650px){
+    .tarjetas, .tarjetas-ataques{
+        flex-direction: column;
+    }
+ } 
+ 
+#tituloMapa {
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 650px;
+    height: 50px;
+    background-color: rgb(107, 216, 44);
+    border: 2px solid rgb(60, 63, 238);
+    border-radius: 20px;
+}
 
+.botonesDireccion{
+    display: flex;
 
+}
 
-
+ 
