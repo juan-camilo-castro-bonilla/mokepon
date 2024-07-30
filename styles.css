@@ -12,7 +12,7 @@ body{
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
-    background-color: #FDFFD2;
+    background-color: #ecea67dc;
     
 }
 
@@ -34,10 +34,13 @@ body{
 
     font-family: "Playwrite US Trad", cursive;
     font-optical-sizing: auto;
+    font-size: 20px;
     font-weight: normal;
     font-style: normal;
+    
 
 }
+
 
 input {
     background-color: blueviolet;
@@ -163,10 +166,23 @@ input:checked + label {
 
 }
 
-#mapa {
+#ver-mapa button {
+    font-family: "Margarine", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
     
-    border: 2px solid black;
+background-color: sandybrown ;
+width: 60px;
+height: 50px;
+background: rgb(38, 226, 95);
+padding: 15px;
+box-sizing: border-box;
+margin: 10px;
+border-radius: 20PX;
+margin: 10px 0;
 }
+
 
 
 @media (max-width: 360px){
@@ -175,11 +191,19 @@ input:checked + label {
     }
  }    
 
- @media (min-width: 361px) and (max-width: 650px){
+ /* @media (min-width: 361px) and (max-width: 650px){
     .tarjetas, .tarjetas-ataques{
         flex-direction: column;
     }
- } 
+ }  */
+
+ @media (max-width: 1150px) {
+    .tarjetas, #contenedorTarjetas div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+ }
  
 #tituloMapa {
     display:flex ;
@@ -187,11 +211,11 @@ input:checked + label {
     justify-content: center;
     align-items: center;
     color: black;
-    width: 650px;
+    /* width: 650px;
     height: 50px;
     background-color: rgb(107, 216, 44);
     border: 2px solid rgb(60, 63, 238);
-    border-radius: 20px;
+    border-radius: 20px; */
 }
 
 .botonesDireccion{

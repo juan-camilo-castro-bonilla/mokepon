@@ -4,6 +4,7 @@
             <meta charset="utf-8"/>
             <title>MOKEPON!</title>
             <link rel="stylesheet" href="./styles.css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" >
             
     </head>
     <body>
@@ -22,14 +23,15 @@
         </section>
 
         <section id="ver-mapa">
-            <h1 id="tituloMapa" class="titulo">RECORRE EL MAPA JUNTO A TU MOKEPON...</h1>
+            <h2 id="tituloMapa" class="subtitulo">RECORRE EL MAPA JUNTO A TU MOKEPON...</h2>
             <canvas id="mapa" ></canvas>
 
+            
+                <button  id="botonArriba"  onmouseup="detenerMovimiento()"onmousedown="moverArriba()"> ⇧ </button>
             <div class="botonesDireccion">
-            <button  id="botonArriba"  onmouseup="detenerMovimiento()"onmousedown="moverArriba()"> ⇧ </button>
-            <button  id="botonIzquierda" onmouseup="detenerMovimiento()"onmousedown="moverIzquierda()"> ⇦ </button>
-            <button  id="botonAbajo" onmouseup="detenerMovimiento()"onmousedown="moverAbajo()"> ⇩ </button>
-            <button  id="botonDerecha" onmouseup="detenerMovimiento()"onmousedown="moverDerecha()">⇨ </button>
+                <button  id="botonIzquierda" onmouseup="detenerMovimiento()"onmousedown="moverIzquierda()"> ⇦ </button>
+                <button  id="botonAbajo" onmouseup="detenerMovimiento()"onmousedown="moverAbajo()"> ⇩ </button>
+                <button  id="botonDerecha" onmouseup="detenerMovimiento()"onmousedown="moverDerecha()">⇨ </button>
             </div>
                
         </section>
